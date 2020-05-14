@@ -19,7 +19,7 @@ module SpreeMultiDomain
 
     initializer "templates with dynamic layouts" do |app|
       ActionView::TemplateRenderer.prepend(
-        Module.new 
+        Module.new do
           def render(context, options)
             @view = context
             super(context, options)
